@@ -22,7 +22,7 @@ size_t sorted_size_binary(const binary_tree_t *tree)
  * @size: Address to store the size of the array.
  * Return: Sorted array of integers.
  */
- 
+
 int *heap_to_sorted_array(heap_t *heap, size_t *size)
 {
 	int iExtract, i = 0;
