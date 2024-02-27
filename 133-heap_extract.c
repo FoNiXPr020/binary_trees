@@ -6,7 +6,7 @@
 
 #define SETUP_NODE_BLOC { \
 	iTemp = *root; \
-	iSize = binary_tree_size(*root); \
+	iSize = tree_size_binary(*root); \
 	iBinary = &iBuffer[49]; \
 	*iBinary = 0; \
 }
@@ -79,6 +79,19 @@ bst_t *h_swap(bst_t *a, bst_t *b)
 	while (b->parent)
 		b = b->parent;
 	return (b);
+}
+
+/**
+ * tree_size_binary - Measures the size of a binary tree.
+ * @tree: Pointer to the input binary tree.
+ * Return: Number of descendant child nodes.
+ */
+size_t tree_size_binary(const binary_tree_t *tree)
+{
+	if (!tree)
+		return (0);
+
+	return (1 + tree_size_binary(tree->left) + tree_size_binary(tree->right));
 }
 
 /**
